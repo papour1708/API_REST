@@ -6,8 +6,6 @@ require('dotenv').config({ path: 'config/.env' })
 const mongoose = require('mongoose')
 const usersRoutes = require('./routes/usersController')
 const bodyParser = require('body-parser')
-
-
 //Conexion base de données
 const options = {
     autoIndex: false, 
@@ -22,9 +20,7 @@ const options = {
     err => { console.log("Erreur de connexion à la BDD") }
   )
 
-
 app.use(bodyParser.json());
 app.use('/users', usersRoutes)
-
 // Ecouté le seveur sur le port indiqué ci dessus
 app.listen(port, ()=> console.log('Server lancé sur le port '+port))
